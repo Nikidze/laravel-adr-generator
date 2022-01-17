@@ -1,0 +1,11 @@
+<?php
+
+namespace {{ namespace }};
+
+class {{ action_title }}Response {
+
+    public function respond()
+    {
+
+    }
+}

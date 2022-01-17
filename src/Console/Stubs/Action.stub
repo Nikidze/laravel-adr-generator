@@ -1,0 +1,17 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ response_namespace }}\{{ action_title }}Response;
+use {{ request_namespace }}\{{ action_title }}Request;
+
+class {{ action_title }}Action {
+
+    public function __construct(
+        private {{ action_title }}Response $response
+    ) {}
+
+    public function __invoke({{ action_title }}Request $request)
+    {
+    }
+}
