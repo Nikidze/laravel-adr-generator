@@ -88,7 +88,7 @@ class Generate extends Command
     protected function createAction()
     {
         $folderToStore = "Actions/".$this->path;
-        $this->createFolder(app_path() . '/' . $folderToStore);
+        $this->createFolder(app_path() . "/Http" . '/' . $folderToStore);
         $stub = $this->getStub('Action');
 
         $stubValues = [
@@ -98,7 +98,7 @@ class Generate extends Command
             '{{ request_namespace }}',
         ];
         $values = [
-            $this->generateNamespace('App/' . $folderToStore),
+            $this->generateNamespace('App/Http/' . $folderToStore),
             $this->title,
             $this->responseNamespace,
             $this->requestNamespace
@@ -110,20 +110,20 @@ class Generate extends Command
             $stub
         );
 
-        $this->writeFile(app_path() . '/' . $folderToStore . "/" . $this->title . '.php', $actionContent);
+        $this->writeFile(app_path() . "/Http" . '/' . $folderToStore . "/" . $this->title . '.php', $actionContent);
     }
 
     protected function createRequest()
     {
         $folderToStore = "Requests/".$this->path;
-        $this->createFolder(app_path() . '/' . $folderToStore);
+        $this->createFolder(app_path() . "/Http" . '/' . $folderToStore);
         $stub = $this->getStub('Request');
 
         $stubValues = [
             '{{ namespace }}',
             '{{ action_title }}',
         ];
-        $this->requestNamespace = $this->generateNamespace('App/' . $folderToStore);
+        $this->requestNamespace = $this->generateNamespace('App/Http/' . $folderToStore);
         $values = [
             $this->requestNamespace,
             $this->title
@@ -135,13 +135,13 @@ class Generate extends Command
             $stub
         );
 
-        $this->writeFile(app_path() . '/' . $folderToStore . "/" . $this->title . '.php', $actionContent);
+        $this->writeFile(app_path() . "/Http" . '/' . $folderToStore . "/" . $this->title . '.php', $actionContent);
     }
 
     protected function createResponse()
     {
         $folderToStore = "Responses/".$this->path;
-        $this->createFolder(app_path() . '/' . $folderToStore);
+        $this->createFolder(app_path() . "/Http" . '/' . $folderToStore);
         $stub = $this->getStub('Response');
 
         $stubValues = [
@@ -149,7 +149,7 @@ class Generate extends Command
             '{{ action_title }}',
         ];
 
-        $this->responseNamespace = $this->generateNamespace('App/' . $folderToStore);
+        $this->responseNamespace = $this->generateNamespace('App/Http/' . $folderToStore);
         $values = [
             $this->responseNamespace,
             $this->title
@@ -161,7 +161,7 @@ class Generate extends Command
             $stub
         );
 
-        $this->writeFile(app_path() . '/' . $folderToStore . "/" . $this->title . '.php', $actionContent);
+        $this->writeFile(app_path() . "/Http" . '/' . $folderToStore . "/" . $this->title . '.php', $actionContent);
     }
 
     /**
