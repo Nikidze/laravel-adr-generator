@@ -110,7 +110,7 @@ class Generate extends Command
             $stub
         );
 
-        $this->writeFile(app_path() . "/Http" . '/' . $folderToStore . "/" . $this->title . '.php', $actionContent);
+        $this->writeFile(app_path() . "/Http" . '/' . $folderToStore . "/" . $this->title."Action" . '.php', $actionContent);
     }
 
     protected function createRequest()
@@ -135,7 +135,7 @@ class Generate extends Command
             $stub
         );
 
-        $this->writeFile(app_path() . "/Http" . '/' . $folderToStore . "/" . $this->title . '.php', $actionContent);
+        $this->writeFile(app_path() . "/Http" . '/' . $folderToStore . "/" . $this->title."Request" . '.php', $actionContent);
     }
 
     protected function createResponse()
@@ -161,7 +161,7 @@ class Generate extends Command
             $stub
         );
 
-        $this->writeFile(app_path() . "/Http" . '/' . $folderToStore . "/" . $this->title . '.php', $actionContent);
+        $this->writeFile(app_path() . "/Http" . '/' . $folderToStore . "/" . $this->title."Response" . '.php', $actionContent);
     }
 
     /**
